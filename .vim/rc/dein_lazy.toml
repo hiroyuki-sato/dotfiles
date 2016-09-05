@@ -1,0 +1,27 @@
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = ['ruby']
+
+
+[[plugins]]
+repo = 'tpope/vim-rake'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'tpope/vim-bundler'
+on_ft = ['ruby']
+
+# endを勝手に入れてくれる。
+# インデントしているところに入れてくれないのでとりあえずOff
+#[[plugins]]
+#repo = 'tpope/vim-endwise'
+#on_ft = ['ruby']
+
+#[[plugins]]
+#repo = 'Blackrush/vim-gocode'
+#on_ft = ['go']
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+#:GoInstallBinaries'

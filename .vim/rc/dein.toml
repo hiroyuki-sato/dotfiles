@@ -1,0 +1,29 @@
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
+#[[plugins]]
+#repo = 'osyo-manga/vim-monster'
+
+[[plugins]]
+repo = 'marcus/rsense'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Sixeight/unite-grep'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'sonots/ctrlp.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+#[[plugins]] # TMUX
+#repo = 'tmux-plugins/vim-tmux'
+#on_ft = 'tmux'
+
+

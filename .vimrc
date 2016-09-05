@@ -20,14 +20,16 @@ endif
 
 " 設定開始
 if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
   " プラグインリストを収めた TOML ファイル
   " 予め TOML ファイル（後述）を用意しておく
   let g:rc_dir    = expand('~/.vim/rc')
   let s:toml      = g:rc_dir . '/dein.toml'
   let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
+  call dein#begin(s:dein_dir,[s:toml,s:lazy_toml])
+
+  "変更を検出
+"  call dein#begin(s:dein_dir)
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml,      {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
@@ -191,6 +193,10 @@ let g:lightline = {
         \ }
         \ }
 
+"let g:lightline = {
+"      \ 'colorscheme': 'wombat'
+"      \ }
+
 function! MyModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
 endfunction
@@ -233,4 +239,73 @@ endfunction
 function! MyMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+
+"------------------------------------
+" unite.vim
+"------------------------------------
+" 入力モードで開始する
+let g:unite_enable_start_insert=0
+" バッファ一覧
+noremap <C-U><C-B> :Unite buffer<CR>
+" ファイル一覧
+noremap <C-U><C-F> :UniteWithBufferDir -buffer-name=files file<CR>
+" 最近使ったファイルの一覧
+noremap <C-U><C-R> :Unite file_mru<CR>
+" レジスタ一覧
+noremap <C-U><C-Y> :Unite -buffer-name=register register<CR>
+" ファイルとバッファ
+noremap <C-U><C-U> :Unite buffer file_mru<CR>
+" 全部
+noremap <C-U><C-A> :Unite UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+" ESCキーを2回押すと終了する
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+" Unite-grep
+nnoremap <silent> ,ug :Unite grep:%:-iHRn<CR>
+
+"" vim-monsterを有効にする
+"let g:neocomplete#sources#omni#input_patterns = {
+"\  'ruby': '[^. *\t]\.\w*\|\h\w*::'
+"\}
+
+"rsense
+let g:rsenseUseOmniFunc = 1
+
+"Fix E121: Undefined variable: g:neocomplete#force_omni_input_patterns
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+
+let g:neocomplete#force_omni_input_patterns.ruby =
+         \ '[^. *\t]\.\w*\|\h\w*::'
+
+" GO
+
+"https://github.com/fatih/vim-go#settings
+"By default syntax-highlighting for Functions, Methods and
+"Structs is disabled. To change it:
+"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+"Enable goimports to automatically insert import paths instead of gofmt:
+let g:go_fmt_command = "goimports"
+
+"By default vim-go shows errors for the fmt command, to disable it:
+"let g:go_fmt_fail_silently = 1
+
+"Disable auto fmt on save:
+"let g:go_fmt_autosave = 0
+
+"Disable opening browser after posting your snippet to play.golang.org:
+
+"let g:go_play_open_browser = 0
+
+filetype plugin on
+
+
 
