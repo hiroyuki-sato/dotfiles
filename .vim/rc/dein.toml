@@ -4,8 +4,8 @@ repo = 'Shougo/neocomplete.vim'
 #[[plugins]]
 #repo = 'osyo-manga/vim-monster'
 
-[[plugins]]
-repo = 'marcus/rsense'
+#[[plugins]]
+#repo = 'marcus/rsense'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
