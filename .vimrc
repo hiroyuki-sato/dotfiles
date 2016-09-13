@@ -44,6 +44,8 @@ if dein#check_install()
   call dein#install()
 endif
 
+"call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+
 "filetype plugin indent on
 
 "
@@ -317,3 +319,5 @@ syntax on
 
 autocmd FileType ruby setlocal formatoptions-=ro
 
+
+"
