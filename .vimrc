@@ -44,17 +44,11 @@ if dein#check_install()
   call dein#install()
 endif
 
+"filetype plugin indent on
 
-"-----------------------------------------------------------------------------
-" Global
-"-----------------------------------------------------------------------------
-"map <C-g> :Gtags 
-map <C-h> :Gtags -f %<CR>
-map <C-j> :GtagsCursor<CR>
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
+"
+"
 
-syntax on
 
 set encoding=utf-8
 "set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
@@ -308,4 +302,18 @@ let g:go_fmt_command = "goimports"
 filetype plugin on
 
 
+"-----------------------------------------------------------------------------
+" Global
+"-----------------------------------------------------------------------------
+"map <C-g> :Gtags 
+map <C-h> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
+
+syntax on
+
+"ruby autocmd
+
+autocmd FileType ruby setlocal formatoptions-=ro
 
