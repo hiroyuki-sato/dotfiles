@@ -333,4 +333,4 @@ if executable('hw')
 endif
 
 
-"
+noremap <C-w>o <nop>
