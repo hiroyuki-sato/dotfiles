@@ -64,5 +64,6 @@ export PATH=$PATH:$GOPATH/bin
 export EDITOR=/usr/local/bin/vim
 export VISUAL=/usr/local/bin/vim
 export LESS=-qR
+#export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 
 test -r $HOME/.bash_profile_private && source $HOME/.bash_profile_private
