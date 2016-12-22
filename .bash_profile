@@ -68,3 +68,9 @@ export LESS=-qR
 #export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 
 test -r $HOME/.bash_profile_private && source $HOME/.bash_profile_private
+
+#
+# opam
+#
+eval `opam config env`
+. /Users/hsato/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
