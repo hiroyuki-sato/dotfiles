@@ -42,6 +42,7 @@ alias R='R --no-save'
 alias javac="javac -J-Duser.language=en"
 alias tmux="TERM=screen-256color-bce tmux"
 alias irb='pry'
+alias pygtags='gtags --gtagslabel=pygments --debug'
 
 # 
 export LESSCHARSET=utf-8
