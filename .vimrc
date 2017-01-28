@@ -334,3 +334,7 @@ endif
 
 
 noremap <C-w>o <nop>
+
+
+let mapleader=","
+nnoremap <leader>t :NERDTreeToggle<CR>
