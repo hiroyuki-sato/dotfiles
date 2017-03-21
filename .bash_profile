@@ -74,3 +74,11 @@ test -r $HOME/.bash_profile_private && source $HOME/.bash_profile_private
 #
 eval `opam config env`
 . /Users/hsato/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+#
+# merlin (OCaml) setting.
+#
+export OCAMLPARAM="_,bin-annot=1"
+export OPAMKEEPBUILDDIR=1
+
+
