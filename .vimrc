@@ -44,7 +44,7 @@ if dein#check_install()
   call dein#install()
 endif
 
-"call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 
 "filetype plugin indent on
 
@@ -336,5 +336,12 @@ endif
 noremap <C-w>o <nop>
 
 
-let mapleader=","
-nnoremap <leader>t :NERDTreeToggle<CR>
+nmap <Plug>tc :call ToggleColorColumn()<CR>
+
+function! ToggleColorColumn()
+    if &colorcolumn == 0
+        execute "set colorcolumn=80,120"
+    else
+        execute "set colorcolumn=0"
+    endif
+endfunction
