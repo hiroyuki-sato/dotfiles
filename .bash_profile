@@ -82,3 +82,5 @@ export OCAMLPARAM="_,bin-annot=1"
 export OPAMKEEPBUILDDIR=1
 
 
+#nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
